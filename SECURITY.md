@@ -23,7 +23,7 @@ El uso de la plataforma implica la aceptación de estas normas.
 
 Si detectas un problema de seguridad o una publicación inapropiada, puedes comunicarte con los administradores mediante el buzón privado.
 
-Última actualización: 31 de mayo de 2026.
+Última actualización: 29 de junio de 2026.
 
 ## Supported Versions
 
