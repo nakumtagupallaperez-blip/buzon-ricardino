@@ -1,162 +1,545 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
-<title>La Realidad de los Ricardinos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Buzón Ricardino</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #4facfe, #6a11cb);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-.poster {
-  width: 900px;
-  background: white;
-  border-radius: 20px;
-  display: flex;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+body{
+
+background:linear-gradient(-45deg,#4f46e5,#2563eb,#06b6d4,#9333ea);
+background-size:400% 400%;
+animation:fondo 12s ease infinite;
+color:white;
+
 }
 
-/* lado texto */
-.left {
-  width: 60%;
-  padding: 30px;
+@keyframes fondo{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
 }
 
-.title {
-  font-size: 30px;
-  font-weight: bold;
-  color: #6a11cb;
+header{
+
+padding:70px 20px;
+text-align:center;
+
 }
 
-.subtitle {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #555;
+header h1{
+
+font-size:55px;
+font-weight:700;
+
 }
 
-.section {
-  margin-top: 20px;
+header p{
+
+margin-top:15px;
+font-size:20px;
+
 }
 
-.section h3 {
-  margin-bottom: 5px;
-  color: #333;
+.logo{
+
+width:180px;
+height:180px;
+margin:auto;
+margin-bottom:25px;
+border-radius:50%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:80px;
+box-shadow:0px 10px 30px rgba(0,0,0,.35);
+
 }
 
-.section p {
-  color: #555;
-  font-size: 14px;
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
 }
 
-/* buzones */
-.boxes {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+
 }
 
-.box {
-  flex: 1;
-  background: #f1f1f1;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: bold;
-  transition: 0.3s;
+.card{
+
+background:white;
+color:#333;
+padding:30px;
+border-radius:20px;
+transition:.4s;
+box-shadow:0px 15px 25px rgba(0,0,0,.25);
+
 }
 
-.box:hover {
-  background: #ddd;
-  cursor: pointer;
+.card:hover{
+
+transform:translateY(-10px);
+
 }
 
-/* reglas */
-.rules {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #444;
+.card h2{
+
+color:#4f46e5;
+margin-bottom:15px;
+
 }
 
-/* lado derecho */
-.right {
-  width: 40%;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
+.card p{
+
+line-height:28px;
+
 }
 
-.right div {
-  font-size: 18px;
+button{
+
+margin-top:20px;
+padding:14px 30px;
+border:none;
+border-radius:50px;
+background:#4f46e5;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+
 }
+
+button:hover{
+
+background:#2563eb;
+transform:scale(1.05);
+
+}
+
+section{
+
+padding:70px 0;
+
+}
+
+.titulo{
+
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+
+}
+
+.formulario{
+
+background:white;
+padding:35px;
+border-radius:20px;
+color:#333;
+box-shadow:0px 15px 25px rgba(0,0,0,.3);
+
+}
+
+input,
+textarea,
+select{
+
+width:100%;
+padding:15px;
+margin-top:15px;
+margin-bottom:20px;
+border-radius:12px;
+border:2px solid #ddd;
+font-size:16px;
+
+}
+
+textarea{
+
+resize:none;
+height:170px;
+
+}
+
+.enviar{
+
+width:100%;
+background:#06b6d4;
+
+}
+
+.enviar:hover{
+
+background:#0891b2;
+
+}
+
+footer{
+
+padding:40px;
+text-align:center;
+margin-top:80px;
+background:rgba(0,0,0,.2);
+
+}
+
+.equipo{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+
+}
+
+.persona{
+
+background:white;
+color:#333;
+padding:25px;
+border-radius:18px;
+text-align:center;
+box-shadow:0px 10px 20px rgba(0,0,0,.2);
+
+}
+
+.persona h3{
+
+color:#4f46e5;
+
+}
+}
+
+.contador{
+
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+flex-wrap:wrap;
+
+}
+
+.numero{
+
+background:white;
+color:#333;
+padding:25px;
+border-radius:20px;
+min-width:180px;
+text-align:center;
+box-shadow:0px 10px 20px rgba(0,0,0,.25);
+
+}
+
+.numero h2{
+
+font-size:45px;
+color:#4f46e5;
+
+}
+
+.numero p{
+
+margin-top:10px;
+
+}
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:36px;
+
+}
+
+.titulo{
+
+font-size:30px;
+
+}
+
+.logo{
+
+width:140px;
+height:140px;
+font-size:60px;
+
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="poster">
+<header>
 
-  <!-- IZQUIERDA -->
-  <div class="left">
+<div class="logo">
+📮
+</div>
 
-    <div class="title">
-      🌎 LA REALIDAD DE LOS RICARDINOS
-    </div>
+<h1>Buzón Ricardino</h1>
 
-    <div class="subtitle">
-      Tu voz cuenta 💬 Comparte ideas, sugerencias y experiencias con nuestra comunidad.
-    </div>
+<p>
+Tu voz importa. Comparte sugerencias, ideas, felicitaciones o inquietudes para mejorar nuestra institución.
+</p>
 
-    <div class="section">
-      <h3>📌 Acerca del Proyecto</h3>
-      <p>
-        La Realidad de los Ricardinos es una plataforma comunitaria donde estudiantes, jóvenes y adultos pueden compartir opiniones, sugerencias, experiencias e ideas para contribuir al diálogo y la participación de la comunidad.
-      </p>
-    </div>
+</header>
 
-    <div class="boxes">
-      <div class="box">
-        📩 Buzón Privado<br><br>
-        <small>Envía sugerencias o consultas a los administradores</small>
-      </div>
+<div class="container">
 
-      <div class="box">
-        🌎 Buzón Público<br><br>
-        <small>Comparte mensajes con toda la comunidad</small>
-      </div>
-    </div>
+<section>
 
-    <div class="rules">
-      📜 <b>Normas de la Comunidad:</b><br>
-      ✔ Respeto<br>
-      ✔ Responsabilidad<br>
-      ✔ Convivencia<br>
-      ✔ Participación positiva
-    </div>
+<h2 class="titulo">
+¿Por qué nace este proyecto?
+</h2>
 
-  </div>
+<div class="cards">
 
-  <!-- DERECHA -->
-  <div class="right">
-    <div>
-      👦✨<br><br>
-      Imagen del proyecto<br>
-      (la pondrás después)
-    </div>
-  </div>
+<div class="card">
+
+<h2>🎯 Objetivo</h2>
+
+<p>
+
+Mejorar la comunicación entre estudiantes y docentes mediante un buzón físico y digital donde cualquier integrante de la comunidad educativa pueda expresar sus ideas de forma responsable.
+
+</p>
 
 </div>
 
-</body>
-</html>
+<div class="card">
+
+<h2>💡 Beneficios</h2>
+
+<p>
+
+✔ Mayor participación.<br>
+✔ Mejor convivencia.<br>
+✔ Comunicación segura.<br>
+✔ Escucha activa.<br>
+✔ Solución de problemas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>📌 Nuestra misión</h2>
+
+<p>
+
+Promover una comunidad educativa basada en el respeto, la participación y el diálogo mediante herramientas accesibles para todos.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">
+
+📨 Envíanos un mensaje
+
+</h2>
+
+<div class="formulario">
+
+<input
+type="text"
+placeholder="Nombre (opcional)"
+>
+
+<select>
+
+<option>Seleccione el tipo de mensaje</option>
+
+<option>Sugerencia</option>
+
+<option>Consulta</option>
+
+<option>Felicitación</option>
+
+<option>Queja</option>
+
+<option>Otro</option>
+
+</select>
+
+<textarea
+placeholder="Escribe aquí tu mensaje..."></textarea>
+
+<button class="enviar">
+
+Enviar Mensaje 🚀
+
+</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="titulo">
+
+📊 Nuestro impacto
+
+</h2>
+
+<div class="contador">
+
+<div class="numero">
+
+<h2 id="n1">
+
+0
+
+</h2>
+
+<p>
+
+Mensajes enviados
+
+</p>
+
+</div>
+
+<div class="numero">
+
+<h2>
+
+5
+
+</h2>
+
+<p>
+
+Integrantes
+
+</p>
+
+</div>
+
+<div class="numero">
+
+<h2>
+
+100%
+
+</h2>
+
+<p>
+
+Compromiso
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+  <section>
+
+<h2 class="titulo">
+👨‍💻 Equipo del Proyecto
+</h2>
+
+<div class="equipo">
+
+<div class="persona">
+<h3>👑 Tagu Nakum Palla Pérez</h3>
+<p>
+<b>Creador de la página web</b><br>
+Programación, diseño web, desarrollo digital y coordinación tecnológica del proyecto.
+</p>
+</div>
+
+<div class="persona">
+<h3>👨 José</h3>
+<p>
+Integrante del proyecto.<br>
+Apoyo en la elaboración del buzón físico y presentación.
+</p>
+</div>
+
+<div class="persona">
+<h3>👨 Bryan</h3>
+<p>
+Integrante del proyecto.<br>
+Apoyo en la elaboración del afiche, difusión y exposición.
+</p>
+</div>
+
+<div class="persona">
+<h3>👩 Violeta</h3>
+<p>
+Integrante del proyecto.<br>
+Apoyo en la investigación, organización y presentación.
+</p>
+</div>
+
+<div class="persona">
+<h3>👩 Korina</h3>
+<p>
+Integrante del proyecto.<br>
+Apoyo en el desarrollo del proyecto y exposición.
+</p>
+</div>
+
+</div>
+
+</section>
+
+  <footer>
+
+<h2>Buzón Ricardino</h2>
+
+<p>
+Proyecto educativo para fortalecer la comunicación y la convivencia escolar.
+</p>
+
+<br>
+
+<p>
+🌐 Página web desarrollada por <b>Tagu Nakum Palla Pérez</b>.
+</p>
+
+<p>
+© 2026 Todos los derechos reservados.
+</p>
+
+</footer>
